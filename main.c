@@ -5,8 +5,10 @@
 
 #define DATA_NUM 1370  // 收集数据的数量
 #define FEATURE_NUM 4  // 每一组数据的特征的数量
-#define START_NUM 1000  // 从START_NUM处开始分类
+#define START_NUM 100  // 从START_NUM处开始分类
 #define END_NUM 1370  // 从END_NUM处结束分类
+#define TRAINING_START_NUM 0  // 从TRAINING_START_NUM处开始训练
+#define TRAINING_END_NUM 1000  // 从RAINING_END_NUM处开始训练
 
 
 int getData(char data_road[]);  // 收集数据
@@ -90,7 +92,7 @@ double *dataTraining(){  // 数据训练
         theta[i] = 1;
     }
     while (iter < 1000){
-        for (int j = 0; j < DATA_NUM-370; ++j){
+        for (int j = TRAINING_START_NUM; j < TRAINING_END_NUM; ++j){
             h = 0;
             for (int k = 0; k < FEATURE_NUM; ++k) {
                 h = h + theta[k]*dataList[j][k];
