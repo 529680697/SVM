@@ -1,6 +1,6 @@
-# VSM
+# SVM
 
-Simple implementation of VSM.
+Simple implementation of SVM.
 
 The data_deal.py file is used for collecting information from the Internetand and first-deal it.
 The main.c file will study from the data we collected so that it can classify the new data or predict the result based on new data.
